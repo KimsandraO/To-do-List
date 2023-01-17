@@ -1,34 +1,34 @@
 main.container {
   max-width: 500px;
   margin: auto;
+  background-color: darkgrey;
 }
+
 .header1 {
-    font-family:'Roboto', sans-serif;
-   margin-top: 50px;
-   margin-bottom: 50px;
-   display: flex;
-   background-color: aqua;
-   align-content: center;
-  }
-  
-  h1 {
-    text-align: center;
-    margin: 20px 0;
-    display: flex;
-  }
-  
-  form {
-    text-align: center;
-    margin: 20px 0;
-    display: inline-block;
-    margin-right: 50px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  font-family: "Roboto", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  background-color: aqua;
+  align-content: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+form {
+  text-align: center;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
