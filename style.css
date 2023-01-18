@@ -19,7 +19,6 @@ h1 {
 }
 
 form {
-  text-align: center;
   margin: 20px 0;
   display: inline-block;
 }
@@ -31,4 +30,11 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+[type="checkbox"] {
+  margin-right: 5px;
+}
+
+[type="text"] {
 }
