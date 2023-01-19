@@ -23,16 +23,18 @@
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <form>
+            <form id="toDoInputForm">
               <input
                 type="text"
                 id="toDoInput"
+                name="toDoInput"
+                value=""
                 placeholder="What needs to be done?"
                 style="width: 300px; height: 50px; font-size: 16px"
               />
               <button
                 type="submit"
-                name="addToDo"
+                name="addToDoBtn"
                 id="addToDoBtn"
                 style="height: 50px"
               >
@@ -44,7 +46,7 @@
       </div>
 
       <div id="itemContainer">
-        <form action="" id="items"></form>
+        <form action="" id="itemForm" name="itemForm"></form>
       </div>
 
       <div id="progress" class="row justify-content-between align-items-center">
