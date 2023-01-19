@@ -4,18 +4,15 @@ main.container {
   background-color: darkgrey;
 }
 
-.header1 {
-  font-family: "Roboto", sans-serif;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  background-color: aqua;
-  align-content: center;
-}
-
 h1 {
   text-align: center;
   margin: 20px 0;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
 }
 
 form {
