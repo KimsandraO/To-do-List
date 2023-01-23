@@ -19,18 +19,48 @@
         <div class="row"></div>
           <div class="col-12 text-center">
             <form>
-              <input type="text" id="toDoInput" placeholder="What needs to be done?" style="width:300px; height:50px; font-size: 16px;">
-              <button type="submit" name="addToDo" id="addToDoBtn" style="height:50px;">+</button>
+              <input id="toDoInput" type="text" placeholder="What needs to be done?" style="width:300px; height:50px; font-size: 16px;">
+
+              <button id="add-todo-btn" type="submit" style="height:50px;">+</button>
             </form>
           </div>
         </div>
       </div>
 
-      <div>
-        <form action="/action_page.php" id="items">
-          
-        </form>
+        <form action="/action_page.php">
+          <div id="items">
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" id="item1" >
+              <label for="item1"> Go shopping</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" id="item2" >
+              <label for="item2"> clean the Car</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" id="item3" >
+              <label for="item3"> Feed the Dog</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" id="item4" >
+              <label for="item4"> Feed the Dog</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" id="item5" >
+              <label for="item5"> Feed the Dog</label>
+            </div>
+          </div>
       </div>
+    </form>
 
       <div id="progress" class="row justify-content-between align-items-center">
         <div class="col-6 py-3 text-start">
