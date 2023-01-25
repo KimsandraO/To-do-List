@@ -1,12 +1,10 @@
 toDoInputForm.reset(); // Reset input form when loading DOM
-let toDos = []; // Create empty toDos[] array
-const toDoInput = document.getElementById("toDoInput"); // Input field for new ToDos
+const toDoInput = document.getElementById("toDoInput"); // Get input field for new ToDos
 
 // Read from local storage and fill array with toDos[]
-const storedItems = localStorage.getItem("toDos");
-if (storedItems) {
+let toDos = JSON.parse(localStorage.getItem("toDos")) || []; // Fill toDos[] array with values from local storage or create an empty toDos[] array
+if (toDos) {
   // If there are any stored items in local storage
-  toDos = JSON.parse(storedItems); // Then convert string from local storage back to array
   for (i = 0; i < toDos.length; i++) {
     // And loop through that array
     if (toDos[i]) {
@@ -32,7 +30,8 @@ function createToDoItems(curIndex) {
 
   // Delete item event listener on click of Delete button
   const delBtn = document.createElement("button"); //Create delete button
-  delBtn.textContent = "X"; // Text for delete button
+  delBtn.className = "delBtn";
+  delBtn.innerHTML = '<i class="bi bi-x"></i>'; // Text (x) for delete button
   delBtn.addEventListener("click", (e) => {
     // Event listener for delete button click
     itemList.removeChild(liEle); // Remove li ToDo item from DOM
@@ -40,15 +39,22 @@ function createToDoItems(curIndex) {
     storeLocal(); // Delete from local storage
   });
 
-  // Actually append the elements earlier
+  // Actually append the elements created earlier
   liEle.appendChild(delBtn); // Append the delete button to the li element
-  itemList.appendChild(liEle); // Append the li element to the ul
+  itemList.insertBefore(liEle, toDoInputLi);
+  // itemList.insertBefore(liEle, toDoInputLi); // Append the li element to the ul
 
   // Edit item event listener on blur (focus lost) of input field
   const inputItem = document.getElementById("inputItem" + curIndex); // Get the input item to edit
   inputItem.addEventListener("blur", (e) => {
     // And add an event listener to it for blur event
-    toDos[curIndex] = inputItem.value; // Change toDos[] array at index $curIndex with edit
+    if (inputItem.value != "") {
+      // If value of input field is NOT empty
+      toDos[curIndex] = inputItem.value; // Change toDos[] array at index $curIndex with edit
+    } else {
+      delete toDos[curIndex]; // Else (when empty) delete from toDos[] array at index $curIndex
+      // itemList.removeChild(liEle); // Uncomment this to immediately delete the input field on blur event as well
+    }
     storeLocal(); // Save to local storage after edit
   });
 }
@@ -65,9 +71,8 @@ const addToDo = (e) => {
     createToDoItems(toDos.length - 1); // Create ToDo item at the end of list
     storeLocal(); // Save to local storage after add
     toDoInputForm.reset(); // Reset input form
-  } else {
-    alert("Don't try adding empty ToDos, you lazy bastard!"); // Alert when ToDo input field is empty
   }
 };
 
-addToDoBtn.addEventListener("click", addToDo); // Event listener for Add button (+) click
+toDoInput.addEventListener("blur", addToDo); // Event listener for Add button (+) click
+toDoInputForm.addEventListener("submit", addToDo); // Event listener for Add button (+) click
