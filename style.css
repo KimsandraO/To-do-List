@@ -1,34 +1,110 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+body {
+  background-color: #222;
+}
 main.container {
   max-width: 500px;
   margin: auto;
-  background-color: darkgrey;
+  background-color: #3446a0;
+  color: #dedede;
+  border-radius: 20px;
 }
-
 h1 {
   text-align: center;
   margin: 20px 0;
 }
-
 ul {
   list-style: none;
   margin-left: 0;
   padding: 0;
 }
-
 form {
-  margin: 20px 0;
+  margin: 0;
   display: inline-block;
 }
-
-button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
+button.delBtn {
+  height: 100%;
+  background-color: transparent;
+  border: 0;
   cursor: pointer;
+  font-size: 1.3em;
 }
-
-[type="checkbox"] {
+button.delBtn .bi-x {
+  color: #dedede;
+}
+button.delBtn .bi-x:hover {
+  color: #fff;
+}
+input[type="checkbox"] {
   margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+input[type="checkbox"]:checked {
+  accent-color: #43c03f;
+}
+input[type="text"] {
+  box-sizing: border-box;
+  margin-right: -2em;
+  width: 449px;
+  height: 2em;
+  background-color: transparent;
+  border: 0 solid transparent;
+  outline: none;
+  color: #dedede;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+input[type="text"]:focus {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid #ffd444;
+  border-right: 1px solid #ffd444;
+  border-bottom: 1px solid #ffd444;
+  border-left: 1px solid #ffd444;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  color: #fff;
+}
+#toDoInput::placeholder {
+  color: #ffd444;
+  opacity: 0.8;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#toDoInput::-ms-input-placeholder {
+  color: #ffd444;
+  opacity: 0.8;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#toDoInput:-ms-input-placeholder {
+  color: #ffd444;
+  opacity: 0.8;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#toDoInput:focus::placeholder {
+  opacity: 1;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#toDoInput:focus::-ms-input-placeholder {
+  opacity: 1;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+#toDoInput:focus:-ms-input-placeholder {
+  opacity: 1;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.bi-plus-square {
+  font-size: 20px;
+  margin-right: 5px;
+  color: #ffd444;
+  opacity: 0.8;
 }
