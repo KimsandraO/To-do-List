@@ -47,7 +47,7 @@ input[type="checkbox"]:checked {
 input[type="text"] {
   box-sizing: border-box;
   margin-right: -2em;
-  width: 449px;
+  width: 445px;
   height: 2em;
   background-color: transparent;
   border: 0 solid transparent;
